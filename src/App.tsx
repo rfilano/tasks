@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Col } from "react-bootstrap";
+import { Button, Container, Col, Row } from "react-bootstrap";
 import "./App.css";
 
 function App(): JSX.Element {
@@ -42,26 +42,28 @@ function App(): JSX.Element {
             </Button>
             <div>
                 <Container>
-                    <Col>
-                        <div
-                            style={{
-                                width: "200px",
-                                height: "100px",
-                                backgroundColor: "red",
-                                border: "1px solid black"
-                            }}
-                        ></div>
-                    </Col>
-                    <Col>
-                        <div
-                            style={{
-                                width: "200px",
-                                height: "100px",
-                                backgroundColor: "red",
-                                border: "1px solid black"
-                            }}
-                        ></div>
-                    </Col>
+                    <Row>
+                        <Col>
+                            <div
+                                style={{
+                                    width: "200px",
+                                    height: "100px",
+                                    backgroundColor: "red",
+                                    border: "1px solid black"
+                                }}
+                            ></div>
+                        </Col>
+                        <Col>
+                            <div
+                                style={{
+                                    width: "200px",
+                                    height: "100px",
+                                    backgroundColor: "red",
+                                    border: "1px solid black"
+                                }}
+                            ></div>
+                        </Col>
+                    </Row>
                 </Container>
             </div>
             <p>
