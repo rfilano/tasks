@@ -9,8 +9,8 @@ import { isExpressionStatement } from "typescript";
 export function bookEndList(numbers: number[]): number[] {
     let bookEnds: number[];
     numbers.length >= 1
-        ? (bookEnds = [numbers[0], numbers[numbers.length - 1]])
-        : (bookEnds = []);
+        ? bookEnds = [numbers[0], numbers[numbers.length - 1]]
+        : bookEnds = [];
     return bookEnds;
 }
 /**
@@ -107,15 +107,15 @@ export function injectPositive(values: number[]): number[] {
     Negatives.splice(negativeIndex);
     anyNegatives
         ? vals.splice(
-              negativeIndex + 1,
-              0,
-              Negatives.reduce((total: number, num: number) => total + num, 0)
-          )
+            negativeIndex + 1,
+            0,
+            Negatives.reduce((total: number, num: number) => total + num, 0)
+        )
         : vals.splice(
-              vals.length,
-              0,
-              vals.reduce((total: number, num: number) => total + num, 0)
-          );
+            vals.length,
+            0,
+            vals.reduce((total: number, num: number) => total + num, 0)
+        );
     return vals;
 }
 
