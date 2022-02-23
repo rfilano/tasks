@@ -1,8 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable prettier/prettier */
-import { isExpressionStatement } from "typescript";
-
 /**
  * Consume an array of numbers, and return a new array containing
  * JUST the first and last number. If there are no elements, return
@@ -11,9 +6,11 @@ import { isExpressionStatement } from "typescript";
  */
 export function bookEndList(numbers: number[]): number[] {
     let bookEnds: number[];
-    numbers.length >= 1
-        ? bookEnds = [numbers[0], numbers[numbers.length - 1]]
-        : bookEnds = [];
+    if (numbers.length >= 1) {
+        bookEnds = [numbers[0], numbers[numbers.length - 1]];
+    } else {
+        bookEnds = [];
+    }
     return bookEnds;
 }
 /**
@@ -108,20 +105,18 @@ export function injectPositive(values: number[]): number[] {
     const negativeIndex = vals.findIndex((value: number): boolean => value < 0);
     const Negatives = [...values];
     Negatives.splice(negativeIndex);
-    anyNegatives
-        ? vals.splice(
+    if (anyNegatives) {
+        vals.splice(
             negativeIndex + 1,
             0,
             Negatives.reduce((total: number, num: number) => total + num, 0)
-        )
-        : vals.splice(
+        );
+    } else {
+        vals.splice(
             vals.length,
             0,
             vals.reduce((total: number, num: number) => total + num, 0)
         );
+    }
     return vals;
-}
-
-function num(num: any, number: any) {
-    throw new Error("Function not implemented.");
 }
