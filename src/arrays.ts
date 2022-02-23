@@ -1,5 +1,3 @@
-import { isExpressionStatement } from "typescript";
-
 /**
  * Consume an array of numbers, and return a new array containing
  * JUST the first and last number. If there are no elements, return
@@ -121,8 +119,4 @@ export function injectPositive(values: number[]): number[] {
         );
     }
     return vals;
-}
-
-function num(num: any, number: any) {
-    throw new Error("Function not implemented.");
 }
