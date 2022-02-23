@@ -78,10 +78,10 @@ export function toShortForm(question: Question): string {
 export function toMarkdown(question: Question): string {
     const titleString = "# " + question.name;
     let bodyString = question.body;
-    const options = question.options.join("\n" + "- ");
+    const option = question.options.join("\n" + "- ");
     const areChoices = question.type == "multiple_choice_question";
     if (areChoices) {
-        bodyString = bodyString + "\n" + "- " + options;
+        bodyString = bodyString + "\n" + "- " + option;
     }
     return titleString + "\n" + bodyString;
 }
