@@ -1,4 +1,3 @@
-/* eslint-disable no-extra-parens */
 import { Question, QuestionType } from "./interfaces/question";
 
 /**
@@ -81,7 +80,9 @@ export function toMarkdown(question: Question): string {
     let bodyString = question.body;
     const options = question.options.join("\n" + "- ");
     const areChoices = question.type == "multiple_choice_question";
-    areChoices ? (bodyString = bodyString + "\n" + "- " + options) : bodyString;
+    if (areChoices) {
+        bodyString = bodyString + "\n" + "- " + options;
+    }
     return titleString + "\n" + bodyString;
 }
 
@@ -103,9 +104,11 @@ export function renameQuestion(question: Question, newName: string): Question {
 export function publishQuestion(question: Question): Question {
     const newQuestion = { ...question };
     const isPublished = question.published;
-    isPublished
-        ? (newQuestion.published = false)
-        : (newQuestion.published = true);
+    if (isPublished) {
+        newQuestion.published = false;
+    } else {
+        newQuestion.published = true;
+    }
     return newQuestion;
 }
 
