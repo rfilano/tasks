@@ -31,7 +31,7 @@ export function makeBlankQuestion(
  */
 export function isCorrect(question: Question, answer: string): boolean {
     return (
-        question.expected.trim().toLowerCase() == answer.trim().toLowerCase()
+        question.expected.trim().toLowerCase() === answer.trim().toLowerCase()
     );
 }
 
@@ -43,7 +43,7 @@ export function isCorrect(question: Question, answer: string): boolean {
  */
 export function isValid(question: Question, answer: string): boolean {
     return (
-        question.type == "short_answer_question" ||
+        question.type === "short_answer_question" ||
         question.options.includes(answer)
     );
 }
@@ -55,7 +55,9 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-    return question.id.toString() + ": " + question.name.substring(0, 10);
+    const questionID = question.id.toString();
+    const name10Char = question.name.substring(0, 10);
+    return questionID + ": " + name10Char;
 }
 
 /**
@@ -79,7 +81,7 @@ export function toMarkdown(question: Question): string {
     const titleString = "# " + question.name;
     let bodyString = question.body;
     const options = question.options.join("\n" + "- ");
-    const areChoices = question.type == "multiple_choice_question";
+    const areChoices = question.type === "multiple_choice_question";
     if (areChoices) {
         bodyString = bodyString + "\n" + "- " + options;
     }

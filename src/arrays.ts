@@ -39,9 +39,10 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return stringsToIntegers(
-        amounts.map((str: string): string => str.replace("$", ""))
+    const symbolsRemoved = amounts.map((str: string): string =>
+        str.replace("$", "")
     );
+    return stringsToIntegers(symbolsRemoved);
 };
 
 /**
@@ -53,7 +54,8 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
     const expression = messages.map((str: string): string =>
         str.endsWith("!") ? str.toUpperCase() : str
     );
-    return expression.filter((s: string): boolean => !s.endsWith("?"));
+    const filterd = expression.filter((s: string): boolean => !s.endsWith("?"));
+    return filterd;
 };
 
 /**
@@ -73,7 +75,7 @@ export function countShortWords(words: string[]): number {
 export function allRGB(colors: string[]): boolean {
     return colors.every(
         (color: string): boolean =>
-            color == "red" || color == "blue" || color == "green"
+            color === "red" || color === "blue" || color === "green"
     );
 }
 
@@ -86,7 +88,7 @@ export function allRGB(colors: string[]): boolean {
  */
 export function makeMath(addends: number[]): string {
     const sum = addends.reduce((total: number, num: number) => total + num, 0);
-    const addStr = addends.length == 0 ? "0=0" : sum + "=" + addends.join("+");
+    const addStr = addends.length === 0 ? "0=0" : sum + "=" + addends.join("+");
     return addStr;
 }
 
@@ -105,18 +107,15 @@ export function injectPositive(values: number[]): number[] {
     const negativeIndex = vals.findIndex((value: number): boolean => value < 0);
     const Negatives = [...values];
     Negatives.splice(negativeIndex);
+    const negSum = Negatives.reduce(
+        (total: number, num: number) => total + num,
+        0
+    );
+    const sum = vals.reduce((total: number, num: number) => total + num, 0);
     if (anyNegatives) {
-        vals.splice(
-            negativeIndex + 1,
-            0,
-            Negatives.reduce((total: number, num: number) => total + num, 0)
-        );
+        vals.splice(negativeIndex + 1, 0, negSum);
     } else {
-        vals.splice(
-            vals.length,
-            0,
-            vals.reduce((total: number, num: number) => total + num, 0)
-        );
+        vals.splice(vals.length, 0, sum);
     }
     return vals;
 }
