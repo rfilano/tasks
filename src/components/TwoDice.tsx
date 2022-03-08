@@ -14,8 +14,6 @@ export function d6(): number {
 export function TwoDice(): JSX.Element {
     const [d1, setd1] = useState<number>(1);
     const [d2, setd2] = useState<number>(6);
-    const [win, setWin] = useState<boolean>(false);
-    const [lose, setLose] = useState<boolean>(false);
     function rollLeft(): void {
         setd1(d6());
     }
