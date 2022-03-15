@@ -29,7 +29,10 @@ export function MultipleChoiceQuestion({
                         ))}
                     </Form.Select>
                 </Form.Group>
-                Correct ?: {response === expectedAnswer ? "✔️" : "❌"}.
+                {response === expectedAnswer
+                    ? "Your answer is correct ✔️"
+                    : " Your answer is not correct❌"}
+                .
             </div>
         </div>
     );
