@@ -21,11 +21,12 @@ PASS src/components/Counter.test.tsx
 PASS src/components/RevealAnswer.test.tsx
 PASS src/bad-components/ColoredBox.test.tsx
 PASS src/bad-components/ShoveBox.test.tsx
+PASS src/quizzer/Quizzer.test.tsx
 PASS src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |     100 |    98.52 |     100 |     100 |                   
+All files                    |   99.61 |    95.83 |    99.2 |   99.59 |                   
  src                         |     100 |      100 |     100 |     100 |                   
   App.tsx                    |     100 |      100 |     100 |     100 |                   
   arrays.ts                  |     100 |      100 |     100 |     100 |                   
@@ -37,11 +38,12 @@ All files                    |     100 |    98.52 |     100 |     100 |
   ColoredBox.tsx             |     100 |      100 |     100 |     100 |                   
   DoubleHalf.tsx             |     100 |      100 |     100 |     100 |                   
   ShoveBox.tsx               |     100 |      100 |     100 |     100 |                   
- src/components              |     100 |      100 |     100 |     100 |                   
+ src/components              |   97.43 |       90 |      95 |   97.43 |                   
   ChangeType.tsx             |     100 |      100 |     100 |     100 |                   
   Counter.tsx                |     100 |      100 |     100 |     100 |                   
   CycleHoliday.tsx           |     100 |      100 |     100 |     100 |                   
   RevealAnswer.tsx           |     100 |      100 |     100 |     100 |                   
+  ShowHideOldElements.tsx    |   66.66 |       50 |      50 |   66.66 | 22                
   StartAttempt.tsx           |     100 |      100 |     100 |     100 |                   
   TwoDice.tsx                |     100 |      100 |     100 |     100 |                   
  src/form-components         |     100 |      100 |     100 |     100 |                   
@@ -53,10 +55,12 @@ All files                    |     100 |    98.52 |     100 |     100 |
  src/interfaces              |       0 |        0 |       0 |       0 |                   
   answer.ts                  |       0 |        0 |       0 |       0 |                   
   question.ts                |       0 |        0 |       0 |       0 |                   
+ src/quizzer                 |     100 |      100 |     100 |     100 |                   
+  Quizzer.tsx                |     100 |      100 |     100 |     100 |                   
 -----------------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 20 passed, 20 total
-Tests:       134 passed, 134 total
+Test Suites: 21 passed, 21 total
+Tests:       135 passed, 135 total
 Snapshots:   0 total
-Time:        15.564 s
+Time:        17.217 s
 Ran all test suites.
