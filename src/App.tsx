@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import { ShowHideOldElements } from "./components/ShowHideOldElements";
 import { Quizzer } from "./quizzer/Quizzer";
 
 function App(): JSX.Element {
-    const [visible, setVisible] = useState<boolean>(false);
     return (
         <div className="App">
             <header className="App-header" style={{ backgroundColor: "gray" }}>
